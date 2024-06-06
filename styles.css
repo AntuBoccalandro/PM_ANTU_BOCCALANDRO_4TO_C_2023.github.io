@@ -1,5 +1,6 @@
-body { 
-	font-family: 'Fira Code', monospace;
+/* Estilos base */
+body {
+    font-family: 'Fira Code', monospace;
     background: #B0E0E6;
     width: 100vw;
     height: 100vh;
@@ -62,3 +63,24 @@ span {
     }
 }
 
+/* Media queries para hacer responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .span {
+        font-size: 1.5rem;
+        width: auto;
+    }
+
+    .button-container {
+        margin-top: 20px;
+    }
+
+    .kitty {
+        width: 200px;
+        height: 200px;
+    }
+}
