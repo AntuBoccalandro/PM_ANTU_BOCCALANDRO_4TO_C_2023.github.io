@@ -1,93 +1,44 @@
-/* Estilos base */
-body {
-    font-family: 'Fira Code', monospace;
-    background: #B0E0E6;
-    width: 100vw;
-    height: 100vh;
-    margin: 0; /* Agregamos esto para quitar el margen predeterminado del body */
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inconsolata&family=Roboto+Mono&family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+        <span>"I love you ♥"</span>
+    </div>
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    padding: 20px;
-}
+    <br><br><br><br><br>
 
-span {
-    display: block;
-    white-space: nowrap;
-    border-right: 4px solid;
-    width: 14ch;
-    animation: typing 2s steps(14), blink .5s infinite step-end alternate;
-    overflow: hidden;
-    font-size: 2.1rem;
-    text-align: center;
-}
+    <div class="button-container">
+      <div class="kitty heartbeat-button" data-sound="meow1">
+        <img src="resources/Precioso gatito kawaii para imprimir y colorear.jpeg" alt="Gatito" class="kitty-img" />
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Selecciona todos los elementos con la clase "kitty"
+        const kitties = document.querySelectorAll(".kitty");
 
-@keyframes typing {
-    from { width: 0 }
-}
-
-@keyframes blink {
-    50% { border-color: transparent }
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.kitty {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    cursor: pointer;
-    overflow: hidden;
-    animation: heartbeat 1s infinite;
-    transition: transform 0.3s;
-}
-
-.kitty-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-}
-
-/* Media queries para hacer responsive */
-@media screen and (max-width: 768px) {
-    .container {
-        height: auto;
-    }
-
-    span {
-        font-size: 1.5rem;
-        width: auto; /* Cambiamos el ancho a 'auto' */
-        white-space: nowrap; /* Mantiene el comportamiento de animación */
-        text-align: left; /* Alineación del texto a la izquierda */
-        border-right: 2px solid; /* Ajustamos el borde */
-        animation: typing 3s steps(40), blink .75s infinite step-end alternate; /* Ajustamos la animación */
-    }
-
-    .button-container {
-        margin-top: 20px;
-    }
-
-    .kitty {
-        width: 200px;
-        height: 200px;
-    }
-}
+        // Itera sobre cada uno de los elementos
+        kitties.forEach((kitty) => {
+          kitty.addEventListener("click", function () {
+            // Obtén el nombre del sonido del atributo data-sound
+            const sound = kitty.getAttribute("data-sound");
+            // Crea un nuevo objeto Audio
+            const audio = new Audio(`resources/meow.mp3`);
+            // Reproduce el sonido
+            audio.play();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
