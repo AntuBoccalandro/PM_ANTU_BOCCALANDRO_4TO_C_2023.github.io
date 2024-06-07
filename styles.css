@@ -4,7 +4,11 @@ body {
     background: #B0E0E6;
     width: 100vw;
     height: 100vh;
-    margin: 0; /* Agregamos esto para quitar el margen predeterminado del body */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -12,7 +16,8 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 2.1rem;
-    padding: 40px;
+    padding: 20px;
+    text-align: center;
 }
 
 .button-container {
@@ -21,6 +26,7 @@ body {
     align-items: center;
     max-width: 100%;
     max-height: 100%;
+    padding: 20px;
 }
 
 .kitty {
@@ -45,5 +51,30 @@ body {
     }
     50% {
         transform: scale(1.1);
+    }
+}
+
+/* Media Queries para hacer responsive el sitio */
+@media (max-width: 768px) {
+    .container {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    .kitty {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+
+    .kitty {
+        width: 150px;
+        height: 150px;
     }
 }

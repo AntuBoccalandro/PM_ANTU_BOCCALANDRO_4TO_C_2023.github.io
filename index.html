@@ -15,7 +15,6 @@
       <span>"I love you so much ♥"</span>
     </div>
     
-   <br><br><br><br><br>
     <div class="button-container">
       <div class="kitty heartbeat-button" data-sound="meow1">
         <img
@@ -25,19 +24,15 @@
         />
       </div>
     </div>
+    
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Selecciona todos los elementos con la clase "kitty"
         const kitties = document.querySelectorAll(".kitty");
 
-        // Itera sobre cada uno de los elementos
         kitties.forEach((kitty) => {
           kitty.addEventListener("click", function () {
-            // Obtén el nombre del sonido del atributo data-sound
             const sound = kitty.getAttribute("data-sound");
-            // Crea un nuevo objeto Audio
             const audio = new Audio(`resources/meow.mp3`);
-            // Reproduce el sonido
             audio.play();
           });
         });
