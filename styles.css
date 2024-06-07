@@ -19,8 +19,8 @@ span {
     display: block;
     white-space: nowrap;
     border-right: 4px solid;
-    width: 33ch;
-    animation: typing 2s steps(33), blink .5s infinite step-end alternate;
+    width: 14ch;
+    animation: typing 2s steps(14), blink .5s infinite step-end alternate;
     overflow: hidden;
     font-size: 2.1rem;
     text-align: center;
