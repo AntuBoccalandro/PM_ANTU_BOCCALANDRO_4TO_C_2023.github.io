@@ -64,3 +64,31 @@ body {
         transform: scale(1.1);
     }
 }
+
+
+
+/* Media queries para hacer responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        height: auto;
+    }
+
+    span {
+        font-size: 1.5rem;
+        width: auto; /* Cambiamos el ancho a 'auto' */
+        white-space: nowrap; /* Mantiene el comportamiento de animación */
+        text-align: left; /* Alineación del texto a la izquierda */
+        border-right: 2px solid; /* Ajustamos el borde */
+        animation: typing 3s steps(40), blink .75s infinite step-end alternate; /* Ajustamos la animación */
+    }
+
+    .button-container {
+        margin-top: 20px;
+    }
+
+    .kitty {
+        width: 200px;
+        height: 200px;
+    }
+}
+
